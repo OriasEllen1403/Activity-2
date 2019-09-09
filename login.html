@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block body %}
+<h2 align=center>LOGIN</h2>
+
+<br><br>
+<form method="POST" action="{{ url_for('login') }}" align="center">
+	{{ login.csrf_token }}
+	{{ login.username.label }}
+	{{ login.username }}
+	<ul>
+		{% for error in login.username.errors %}
+		<li style="color:red;">{{ error }}</li>
+		{% endfor %}
+	</ul>
+	{{ login.password.label }}
+	{{ login.password }}
+	<ul>
+		{% for error in login.password.errors %}
+		<li style="color:red;">{{ error }}</li>
+		{% endfor %}
+	</ul>
+	<input type="submit" value="Submit">
+</form>
+
+<br><br>
+<center><a href="{{ url_for('home') }}">HOME PAGE</a></center>
+<br><br>
+
+{% endblock %}
+
+
+
+

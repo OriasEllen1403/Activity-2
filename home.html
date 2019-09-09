@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block body %}
+<h2 align=center>HOME PAGE</h2>
+
+<form>
+	<input type="button" name="login" value="LOGIN" onclick="window.location.href='{{ url_for('login') }}'">
+	<input type="button" name="register" value="REGISTER" onclick="window.location.href='{{ url_for('register') }}'">
+</form>
+
+<br><br>
+<h1 align=center>Welcome to BSIT 4-1 !</h1>
+
+{% endblock %}

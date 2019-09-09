@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block body %}
+<h2 align=center>REGISTER</h2>
+
+<br><br>
+<form method="POST" action="{{ url_for('register') }}">
+	{{ register.csrf_token }}
+
+	{{ register.name.label }}
+	{{ register.name }}
+	<ul>
+		{% for error in register.name.errors %}
+		<li style="color:red;">{{ error }}</li>
+		{% endfor %}
+	</ul>
+	{{ register.email.label }}
+	{{ register.email }}
+	<ul>
+		{% for error in register.email.errors %}
+		<li style="color:red;">{{ error }}</li>
+		{% endfor %}
+	</ul>
+	{{ register.password.label }}
+	{{ register.password }}
+	<ul>
+		{% for error in register.password.errors %}
+		<li style="color:red;">{{ error }}</li>
+		{% endfor %}
+	</ul>
+	{{ register.conpass.label }}
+	{{ register.conpass }}
+	<ul>
+		{% for error in register.conpass.errors %}
+		<li style="color:red;">{{ error }}</li>
+		{% endfor %}
+	</ul>
+	<input type="submit" value="Submit">
+
+</form>
+
+
+<br><br>
+<a href="{{ url_for('home') }}">HOME PAGE</a>
+<br><br>
+{% endblock %}
+
+
+
+
